@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Card from '../Components/Card'
 import { Link } from 'react-router-dom'
+import { ContextGlobal } from '../Components/utils/global.context'
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Home = () => {
+const Home = ({}) => {
   const [vector,setVector]=useState([])
 
   const getData= async ()=>{
@@ -17,16 +18,18 @@ const Home = () => {
   useEffect(()=>{
     getData()
   },[])
-  
+  const { theme } = useContext(ContextGlobal);
+  console.log(theme.background)
+
 
   return (
     <main className="" >
-      <h1>Home</h1>
+      <h1 > Home</h1>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}   
         
         {vector.map(ob=>(
-          <Link key={ob.id} to={`/dentist/${ob.id}`} ><Card  name={ob.name} username={ob.username} id={ob.id}/></Link> 
+          <Link style={{ background: theme.background, color: theme.font }} key={ob.id} to={`/dentist/${ob.id}`} ><Card  name={ob.name} username={ob.username} id={ob.id}/></Link> 
         ))}     
       </div>
     </main>
