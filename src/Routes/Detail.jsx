@@ -14,7 +14,6 @@ const Detail = () => {
   const getData = async () => {
     const resp = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     const data = await resp.json();
-    console.log(data)
     setDentist(data)
   }
   useEffect(()=>{getData()},[])

@@ -14,7 +14,9 @@ const Navbar = () => {
   return (
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
+
       <nav>
+        <img src="./images/dentistry.png" alt="" />
         <ul>
           <li><Link style={{ background: theme.background, color: theme.font }} to="/home">Home</Link></li>
           <li><Link style={{ background: theme.background, color: theme.font }} to="/Contact">Contact</Link></li>

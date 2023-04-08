@@ -19,7 +19,6 @@ const Home = ({}) => {
     getData()
   },[])
   const { theme } = useContext(ContextGlobal);
-  console.log(theme.background)
 
 
   return (

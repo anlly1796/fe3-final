@@ -24,13 +24,10 @@ export const ContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(themes.light);
   const handleChangeTheme = () => {
 
-    console.log('................', theme)
     if (theme === themes.dark) {
-      console.log('inside dark')
       setTheme(themes.light)
     }
     if (theme === themes.light) {
-      console.log('inside light')
 
       setTheme(themes.dark)
     }
